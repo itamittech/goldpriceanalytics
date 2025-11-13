@@ -387,6 +387,16 @@ gold-price-analytics/
 
 ## Getting Started
 
+### 🔐 Security Note
+
+✅ **No sensitive information has been committed to this repository**. All API keys and sensitive configuration use environment variables with safe defaults.
+
+📖 **For detailed setup instructions, see [SETUP.md](SETUP.md)**
+
+### Quick Start (No API Keys Required!)
+
+The application works out of the box with mock data. You can run it immediately:
+
 ### Prerequisites
 
 - **Java 21** - Download from [OpenJDK](https://jdk.java.net/21/) or [Oracle](https://www.oracle.com/java/technologies/downloads/)
@@ -443,6 +453,33 @@ The frontend will start on `http://localhost:5173` (or another port if 5173 is b
    - "How do conflicts affect gold prices?"
    - "Show me recent price trends"
    - "What events impact gold the most?"
+
+**Note**: Currently uses mock data. For real data, configure API keys (see below).
+
+### 🔑 Optional: Configure API Keys for Real Data
+
+To fetch live gold prices and events, get free API keys:
+
+1. **Alpha Vantage** (Gold Prices) - [Get Free Key](https://www.alphavantage.co/support/#api-key)
+   - Free tier: 25 requests/day
+
+2. **NewsAPI** (Events) - [Get Free Key](https://newsapi.org/register)
+   - Free tier: 100 requests/day
+
+**Configure using environment variables:**
+```bash
+export ALPHA_VANTAGE_API_KEY="your_key_here"
+export NEWS_API_KEY="your_key_here"
+mvn spring-boot:run
+```
+
+**Or create** `.env` file (see `.env.example`):
+```bash
+cp .env.example .env
+# Edit .env with your API keys
+```
+
+📖 **Detailed instructions**: See [SETUP.md](SETUP.md) for complete configuration guide.
 
 ## Features Implemented
 
